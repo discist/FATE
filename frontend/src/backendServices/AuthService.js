@@ -5,7 +5,7 @@ import {signInWithPopup, GoogleAuthProvider} from "firebase/auth";
 const provider = new GoogleAuthProvider();
 
 
-function showGoogleSigninPop() {
+export function showGoogleSigninPop() {
     console.log("Show Google Sign in popup called")
 
     signInWithPopup(auth, provider).then((result) => {
@@ -16,7 +16,9 @@ function showGoogleSigninPop() {
 
         const user = result.user;
 
-        console.log(result)
+        console.log("result : " + result)
+        console.log("Google credential : " + credential)
+
 
     }).catch((error) => {
         //Handling errors
