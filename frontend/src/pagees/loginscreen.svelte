@@ -1,6 +1,6 @@
 <script>
 import { onMount } from "svelte";
-
+import google from "../../static/google.svg"
 import {
     bounceOut,
     cubicOut,
@@ -62,15 +62,25 @@ import {
       <div in:fade class="email">
 
         <h1 class="text-xl text-gray-400 font-mono mb-3">
-          Email 
+          Google Login 
       </h1>
   
       <div class="flex flex-row">
   
-          <input type="text" placeholder="enter" class="input input-bordered w-full max-w-xs">
+          
           <!-- svelte-ignore a11y-label-has-associated-control -->
-  
-          <button on:click={()=>{emailtrue = true}} class="btn btn-outline"><h2>  ENTER </h2></button>
+      
+         
+          <button on:click={()=>{emailtrue = true}} class="btn btn-outline">
+
+            <div class="flex flex-row px-10 py-6 mx-8 my-6 justify-center items-center ">
+              <h2>  Join  <img src={google} alt=""></h2>
+            </div>
+    
+            
+           </button>
+
+         
   
       </div>
   
