@@ -5,6 +5,7 @@
   import { UserStore } from "../stores";
 
   import { showGoogleSigninPop } from "../backendServices/AuthService";
+  import { test } from "../backendServices/DbService";
 
   import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
@@ -47,6 +48,9 @@
     on:click={async () => {
       let data = await showGoogleSigninPop();
 
+      console.log(data);
+      
+
       if (data.access) {
         $UserStore.name = data.data.user.displayName;
         $UserStore.token = data.data.user.accessToken;
@@ -57,7 +61,7 @@
         localStorage.setItem("name", data.data.user.email);
         localStorage.setItem("pfp", data.data.user.email);
         localStorage.setItem("email", data.data.user.email);
-        goto("/editprofile");
+        //goto("/editprofile");
       } else {
       }
     }}
@@ -68,7 +72,7 @@
     <img src="/google.svg" alt="" />
   </button>
 
-  <button class="btn"> db </button>
+  <button on:click={test} class="btn"> db </button>
 </main>
 
 <style>
