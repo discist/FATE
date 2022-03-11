@@ -3,20 +3,12 @@
 
     import {showGoogleSigninPop} from "../backendServices/AuthService";
 
-    import {signInWithPopup, GoogleAuthProvider} from "firebase/auth";
-
-    import {auth} from "../firebase";
-
-    import {
-        bounceOut,
-        cubicOut,
-        elasticOut,
-        sineIn,
-        sineInOut,
-    } from "svelte/easing";
+    import {sineIn,} from "svelte/easing";
 
     import {tweened} from "svelte/motion";
-    import {fade, slide} from "svelte/transition";
+
+
+    import {test} from "../backendServices/DbService"
 
     let textanime = tweened(0, {
         duration: 1110,
@@ -24,7 +16,7 @@
     });
 
 
-  
+    test();
     onMount(async () => {
     });
 </script>
@@ -43,21 +35,21 @@
 
 
     <h1 class="font-mono text-2xl mt-16 mb-10">
-      Login
+        Login
     </h1>
 
     <button on:click={()=>{
     showGoogleSigninPop()
   }} class="btn  font-mono  text-white">
-  
-  <p  class="mx-3">  Google </p>
 
-  <img src="/google.svg" alt="">
+        <p class="mx-3"> Google </p>
 
-   
+        <img src="/google.svg" alt="">
+
+
     </button>
 
-   
+
 </main>
 
 <style>
