@@ -122,7 +122,7 @@ import {
 
 
 
-      <button onclick={kukufunc} class="btn btn-info">kuku</button>
+      <button on:click={kukufunc} class="btn btn-info">kuku</button>
 
 
  
