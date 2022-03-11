@@ -20,6 +20,11 @@ import {
 
   let emailtrue = false
 
+  function kukufunc(){
+
+    console.log("kukucunt")
+  }
+
 
   onMount(async()=>{
 
@@ -113,6 +118,14 @@ import {
     <div class="stars -z-10"></div>
     <div class="twinkling  -z-10 "></div>
     <div class="clouds"></div>
+
+
+
+
+      <button onclick={kukufunc} class="btn btn-info">kuku</button>
+
+
+ 
   
     
 </main>
