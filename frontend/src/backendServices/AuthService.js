@@ -1,5 +1,6 @@
 ﻿import {auth} from "../firebase";
 import {signInWithPopup, GoogleAuthProvider} from "firebase/auth";
+import {addOrUpdateUser} from "./DbService";
 
 
 const provider = new GoogleAuthProvider();
@@ -19,6 +20,16 @@ export async function showGoogleSigninPop() {
         let tempData = await signInWithPopup(auth, provider)
         obj.data = tempData;
         obj.access = true;
+
+        //Try to create record in database if it doesn't exist
+        let docRecord = await addOrUpdateUser(tempData.user.uid, {})
+        if (!docRecord.success) {
+            //Return with new error from database
+            obj.data = docRecord.data
+            obj.access = false;
+            return obj;
+        }
+
     } catch (error) {
         obj.data = error.message;
         obj.access = false
@@ -26,14 +37,3 @@ export async function showGoogleSigninPop() {
 
     return obj;
 }
-
-
-/*
-UID
-Database user table
-Name
-Date of birth
-Place of birth
-Time of birth
-Gender
- */
