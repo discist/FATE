@@ -1,3 +1,26 @@
+<script>
+import { onMount } from 'svelte';
+
+
+   import {UserStore} from '../stores'
+
+
+
+   onMount(async()=>{
+
+    console.log($UserStore);
+
+   })
+
+
+
+</script>
+
+
+
+
+
+
 <main style="height: 100vh;" class="bg-transparent ">
 
   
