@@ -24,33 +24,7 @@
     });
 
 
-    function kukufunc() {
-        console.log("kukucunt");
-
-        const provider = new GoogleAuthProvider();
-        signInWithPopup(auth, provider)
-            .then((result) => {
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential.accessToken;
-                // The signed-in user info.
-                const user = result.user;
-                console.log(user);
-                // ...
-            })
-            .catch((error) => {
-                // Handle Errors here.
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // The email of the user's account used.
-                const email = error.email;
-                // The AuthCredential type that was used.
-                const credential = GoogleAuthProvider.credentialFromError(error);
-                console.log(errorMessage);
-                // ...
-            });
-    }
-
+  
     onMount(async () => {
     });
 </script>
@@ -67,10 +41,23 @@
     <div class="twinkling  -z-10 "/>
     <div class="clouds"/>
 
+
+    <h1 class="font-mono text-2xl mt-16 mb-10">
+      Login
+    </h1>
+
     <button on:click={()=>{
     showGoogleSigninPop()
-  }} class="btn btn-info">Google
+  }} class="btn  font-mono  text-white">
+  
+  <p  class="mx-3">  Google </p>
+
+  <img src="/google.svg" alt="">
+
+   
     </button>
+
+   
 </main>
 
 <style>
