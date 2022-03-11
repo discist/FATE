@@ -5,7 +5,7 @@ import {getFirestore} from "firebase/firestore";
 
 const config = {
     apiKey: "AIzaSyBIVTZea4hrqE5GwuFiAJIh2MTpUL0lk8U",
-    authDomain: "fateten.firebaseapp.com",
+    authDomain: "fateten.firebaseapp.com", 
     projectId: "fateten",
     storageBucket: "fateten.appspot.com",
     messagingSenderId: "1022980228718",

@@ -5,7 +5,12 @@ export const Statee = writable("student");
 export const UserStore = writable({
 
     name: "",
+    gender:"",
     token: "",
     pfp: "",
-    email: ""
+    email: "",
+    dob: "",
+    place: "",
+    time: ""
+
 });

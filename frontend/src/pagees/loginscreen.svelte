@@ -54,14 +54,14 @@
       if (data.access) {
         $UserStore.name = data.data.user.displayName;
         $UserStore.token = data.data.user.accessToken;
-        $UserStore.pfp = data.data.user.email;
-        $UserStore.pfp = data.data.user.email;
+        $UserStore.pfp = data.data.user.photoURL;
+       
 
-        localStorage.setItem("token", data.data.user.accessToken);
-        localStorage.setItem("name", data.data.user.email);
-        localStorage.setItem("pfp", data.data.user.email);
-        localStorage.setItem("email", data.data.user.email);
-        //goto("/editprofile");
+        // localStorage.setItem("token", data.data.user.accessToken);
+        // localStorage.setItem("name", data.data.user.email);
+        // localStorage.setItem("pfp", data.data.user.email);
+        // localStorage.setItem("email", data.data.user.email);
+        goto("/editprofile");
       } else {
       }
     }}
@@ -74,6 +74,40 @@
 
   <button on:click={test} class="btn"> db </button>
 </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <style>
   @keyframes move-twink-back {

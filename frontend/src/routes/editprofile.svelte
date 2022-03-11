@@ -1,8 +1,9 @@
 <script>
 import { onMount } from 'svelte';
+import {UserStore} from '../stores'
 
 
-   import {UserStore} from '../stores'
+
 
 
 
@@ -21,42 +22,53 @@ import { onMount } from 'svelte';
 
 
 
-<main style="height: 100vh;" class="bg-transparent ">
-
+<main class="flex flex-col bg-transparent justify-center items-center" style="height: 100vh;">
+  
+  
   
 
     <div class="flex flex-col justify-center bg-transparent items-center py-32 mb-3 font-mono">
 
+
+        <div class="mt-10 mb-11">
+            <div class="avatar relative ">
+                <div class="w-24 rounded-xl">
+                  <img class="bg-white" alt={$UserStore.name} src={$UserStore.pfp}>
+                </div>
+              </div>
+        
+        
+            </div>
+        
+
        
 
-        <div class="mb-3">
-          
-            <input class="visuallyhidden" type="file" id="myfile" name="myfile">
-            
-        </div>
-
+       
           
 
-          <input type="text" placeholder="Name" class="input input-bordered w-full max-w-xs mb-3">
+          <input bind:value={$UserStore.name} type="text" placeholder="Name" class="input input-bordered w-full max-w-xs mb-3">
          
           <select class="select select-bordered w-full max-w-xs mb-5">
-            <option disabled selected>Gender</option>
+            <option  disabled selected>Gender</option>
             <option>Male</option>
             <option>Female</option>
           </select>
 
           
 
-          <input type="text" placeholder="Date of Birth" class="input input-bordered w-full max-w-xs mb-5">
+          <input   bind:value={$UserStore.dob} type="date" placeholder="Date of Birth" class="input input-bordered w-full max-w-xs mb-5">
 
-          <input type="text" placeholder="Place of Birth" class="input input-bordered w-full max-w-xs mb-5">
+          <input bind:value={$UserStore.place} type="text" placeholder="Place of Birth" class="input input-bordered w-full max-w-xs mb-5">
+         
 
-          <input type="number" placeholder="Time of Birth" class="input input-bordered w-full max-w-xs mb-5">
+          <p class="mt-5 mb-2 self-start"> Time of Birth</p>
+          <input bind:value={$UserStore.time} type="time" placeholder="Time of Birth" class="input input-bordered w-full max-w-xs mb-5">
 
 
 
 
-          <button class="btn mt-5 btn-outline "> <a href="/editprofile2"> NEXT → </a> </button>
+          <button  on:click={()=>{console.log($UserStore);
+          }} class="btn mt-5 btn-outline ">  NEXT →  </button>
 
 
 
