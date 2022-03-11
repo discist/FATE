@@ -11,30 +11,22 @@ import {
   } from "svelte/easing";
 
      import { tweened } from "svelte/motion";
-
+     import { fade , slide } from 'svelte/transition';
      let textanime = tweened(0, {
     duration: 1110,
     easing: sineIn,
   });
-  let top = 0;
-  let bottom = 20;
+
+
+  let emailtrue = false
 
 
   onMount(async()=>{
+
+
   
   
 })
-
-$: if ($textanime == bottom) {
-      console.log("bot" , $textanime);
-    textanime.set(top);
-    
-  }
-
-$: if ($textanime == top) {
-      console.log("top");
-    textanime.set(bottom);
-  }
 
 
 
@@ -58,19 +50,59 @@ $: if ($textanime == top) {
 
 
     <div class="form-control w-full max-w-xs mt-20 flex font-extralight font-mono  justify-center">
-        <!-- svelte-ignore a11y-label-has-associated-control -->
-        <h1 class="text-xl text-gray-400 font-mono mb-3">
-            phone 
-        </h1>
 
-        <div class="flex flex-row">
 
-            <input type="text" placeholder="enter" class="input input-bordered w-full max-w-xs">
-            <!-- svelte-ignore a11y-label-has-associated-control -->
+      {#if !emailtrue}
     
-            <button class="btn btn-outline"><a href="/editprofile"> join </a></button>
+      <div in:fade class="email">
 
-        </div>
+        <h1 class="text-xl text-gray-400 font-mono mb-3">
+          Email 
+      </h1>
+  
+      <div class="flex flex-row">
+  
+          <input type="text" placeholder="enter" class="input input-bordered w-full max-w-xs">
+          <!-- svelte-ignore a11y-label-has-associated-control -->
+  
+          <button on:click={()=>{emailtrue = true}} class="btn btn-outline"><h2>  ENTER </h2></button>
+  
+      </div>
+  
+
+      </div>
+
+    
+    {:else }
+
+    <div in:fade>
+
+    <h1 in:fade class="text-xl text-gray-400 font-mono mb-3">
+      Password 
+  </h1>
+
+  <div class="flex flex-row">
+
+      <input type="text" placeholder="enter" class="input input-bordered w-full max-w-xs">
+      <!-- svelte-ignore a11y-label-has-associated-control -->
+
+      <button class="btn btn-outline"><a href="/editprofile"> JOIN </a></button>
+      
+  </div>
+
+  <p  on:click={()=>{emailtrue = false}} in:slide class="text-xs mt-6 cursor-pointer"> go back  </p>
+
+  </div>
+
+ 
+ 
+    
+    
+   
+        
+      {/if}
+    
+        <!-- svelte-ignore a11y-label-has-associated-control -->
        
        
       
