@@ -1,4 +1,4 @@
-import{S as x,i as E,s as S,e as r,t as A,k as u,c as o,a as m,h as g,d as i,m as p,b as d,g as I,J as t,K as _}from"../chunks/vendor-afff52ae.js";function D(y){let s,f,a,h,l,v,n;return{c(){s=r("main"),f=A(`EAT ASS
+import{S as x,i as E,s as S,e as r,t as A,k as u,c as o,a as m,h as g,d as i,m as p,b as d,g as I,J as t,K as _}from"../chunks/vendor-958d3afb.js";function D(y){let s,f,a,h,l,v,n;return{c(){s=r("main"),f=A(`EAT ASS
 
 
     `),a=r("div"),h=u(),l=r("div"),v=u(),n=r("div"),this.h()},l(c){s=o(c,"MAIN",{class:!0});var e=m(s);f=g(e,`EAT ASS

@@ -1,7 +1,14 @@
 <script>
   import { onMount } from "svelte";
+  import { goto } from "$app/navigation";
+
   import { UserStore , UserDbData } from "../stores";
   import { addOrUpdateUser } from '../backendServices/DbService'
+  import { fade, slide , blur ,fly  } from "svelte/transition";
+
+
+  let showsuccess = "hidden"
+
 
   onMount(async () => {
   
@@ -63,10 +70,20 @@
     />
 
     <button
-      on:click={() => { 
+      on:click={async() => { 
        
-        addOrUpdateUser( $UserStore.uid, $UserDbData) 
-        console.log($UserDbData);
+        let res = await addOrUpdateUser( $UserStore.uid, $UserDbData) 
+        console.log(res);
+
+         if(res.success == true){
+           showsuccess = "success"
+           setTimeout(function(){
+       goto("/editprofile2")
+     }, 2000);
+         }else{
+          showsuccess = "failed"
+
+         }
         
        
 
@@ -75,7 +92,36 @@
     >
       NEXT →
     </button>
+
+    {#if showsuccess == "success"}
+
+    <div in:blur class="w-28 flex flex-row justify-center items-center text-white rounded-md mt-5 py-3  bg-green-300 ">
+    
+      <h1> Succes </h1>
+    </div>
+
+    {:else if showsuccess == "failed"}
+
+    <div in:blur class="w-28 flex flex-row justify-center items-center text-white py-3 rounded-md mt-10  bg-red-400 ">
+    
+      <h1> Failed </h1>
+    </div>
+
+    {:else }
+
+    <div>
+    
+     
+    </div>
+
+
+      
+    {/if}
+
+   
   </div>
+
+ 
 
   <div class="stars -z-10" />
   <div class="twinkling  -z-10 " />

@@ -2,7 +2,6 @@ import { d as noop, f as safe_not_equal } from "./index-1ba8bc78.js";
 import { initializeApp } from "firebase/app";
 import { getAuth, setPersistence, inMemoryPersistence } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-import "firebase/compat";
 const subscriber_queue = [];
 function writable(value, start = noop) {
   let stop;

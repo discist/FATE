@@ -1,9 +1,8 @@
 import { c as create_ssr_component, b as subscribe, g as add_attribute } from "../../chunks/index-1ba8bc78.js";
-import { U as UserStore, a as UserDbData } from "../../chunks/firebase-4b4cf34d.js";
+import { U as UserStore, a as UserDbData } from "../../chunks/firebase-22291456.js";
 import "firebase/firestore";
 import "firebase/app";
 import "firebase/auth";
-import "firebase/compat";
 var editprofile_svelte_svelte_type_style_lang = "";
 const css = {
   code: "@keyframes svelte-1d76d2g-move-twink-back{from{background-position:0 0}to{background-position:-10000px 5000px}}@-webkit-keyframes svelte-1d76d2g-move-twink-back{from{background-position:0 0}to{background-position:-10000px 5000px}}@keyframes svelte-1d76d2g-move-clouds-back{from{background-position:0 0}to{background-position:10000px 0}}@-webkit-keyframes svelte-1d76d2g-move-clouds-back{from{background-position:0 0}to{background-position:10000px 0}}.stars.svelte-1d76d2g,.twinkling.svelte-1d76d2g,.clouds.svelte-1d76d2g{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;display:block}.stars.svelte-1d76d2g{background:#000\n      url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top\n      center;z-index:-2}.twinkling.svelte-1d76d2g{background:transparent\n      url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat\n      top center;z-index:-1;-webkit-animation:svelte-1d76d2g-move-twink-back 200s linear infinite;animation:svelte-1d76d2g-move-twink-back 200s linear infinite}.clouds.svelte-1d76d2g{background:transparent\n      url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat\n      top center;z-index:-3;-webkit-animation:svelte-1d76d2g-move-clouds-back 200s linear infinite;animation:svelte-1d76d2g-move-clouds-back 200s linear infinite}",
@@ -31,7 +30,11 @@ const Editprofile = create_ssr_component(($$result, $$props, $$bindings, slots) 
     <input type="${"time"}" placeholder="${"Time of Birth"}" class="${"input input-bordered w-full max-w-xs mb-5"}"${add_attribute("value", $UserDbData.time, 0)}>
 
     <button class="${"btn mt-5 btn-outline "}">NEXT \u2192
-    </button></div>
+    </button>
+
+    ${`${`<div></div>`}`}</div>
+
+ 
 
   <div class="${"stars -z-10 svelte-1d76d2g"}"></div>
   <div class="${"twinkling -z-10  svelte-1d76d2g"}"></div>

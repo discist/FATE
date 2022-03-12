@@ -2,7 +2,6 @@ import {initializeApp} from "firebase/app";
 
 import {getAuth, inMemoryPersistence, setPersistence} from "firebase/auth";
 import {getFirestore} from "firebase/firestore";
-import firebase from "firebase/compat";
 
 const config = {
     apiKey: "AIzaSyBIVTZea4hrqE5GwuFiAJIh2MTpUL0lk8U",

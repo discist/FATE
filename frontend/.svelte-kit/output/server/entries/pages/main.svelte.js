@@ -1,9 +1,8 @@
 import { a as assign, n as now, l as loop, i as identity, c as create_ssr_component, b as subscribe, v as validate_component } from "../../chunks/index-1ba8bc78.js";
-import { w as writable, U as UserStore, a as UserDbData, b as auth } from "../../chunks/firebase-4b4cf34d.js";
+import { w as writable, U as UserStore, a as UserDbData, b as auth } from "../../chunks/firebase-22291456.js";
 import { GoogleAuthProvider } from "firebase/auth";
 import "firebase/firestore";
 import "firebase/app";
-import "firebase/compat";
 new GoogleAuthProvider();
 function sineIn(t) {
   const v = Math.cos(t * Math.PI * 0.5);

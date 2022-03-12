@@ -20,8 +20,7 @@
   } from "svelte/easing";
 
   import { tweened } from "svelte/motion";
-  import { fade, slide } from "svelte/transition";
-  import { dataset_dev } from "svelte/internal";
+
 
   let textanime = tweened(0, {
     duration: 1110,
