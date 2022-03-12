@@ -19,7 +19,7 @@
   } from "svelte/easing";
 
   import { tweened } from "svelte/motion";
-  import { uploadEncodedString } from "../backendServices/StorageService";
+  
 
   let textanime = tweened(0, {
     duration: 1110,
