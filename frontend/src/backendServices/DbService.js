@@ -17,6 +17,10 @@ export async function test() {
     }
 }
 
+
+
+
+
 /**
  * Creates If no record exist, updates/adds data if there is already a record
  * @param id The ID of the record
@@ -25,6 +29,8 @@ export async function test() {
  * Else we get error message as data and false as success
  */
 export async function addOrUpdateUser(id, data) {
+    console.log("add funcfrom db service " , id)
+    
     try {
         //Created a doc reference
         let document = doc(db, userTable, id)

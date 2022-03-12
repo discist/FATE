@@ -3,7 +3,7 @@ import { writable } from 'svelte/store';
 export const Statee = writable("student");
 
 export const UserStore = writable({
-
+    uid: "",
     name: "",
     gender:"",
     token: "",
@@ -14,3 +14,18 @@ export const UserStore = writable({
     time: ""
 
 });
+
+
+export const UserDbData = writable({
+
+    name: "",
+    gender:"",
+    email: "",
+    dob: "",
+    place: "",
+    time: ""
+
+
+
+
+})

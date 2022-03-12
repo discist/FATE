@@ -1,20 +1,9 @@
 import { a as assign, n as now, l as loop, i as identity, c as create_ssr_component, b as subscribe, v as validate_component } from "../../chunks/index-1ba8bc78.js";
-import { w as writable, U as UserStore } from "../../chunks/stores-433ac25d.js";
-import { initializeApp } from "firebase/app";
-import { getAuth, setPersistence, inMemoryPersistence, GoogleAuthProvider } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
-const config = {
-  apiKey: "AIzaSyBIVTZea4hrqE5GwuFiAJIh2MTpUL0lk8U",
-  authDomain: "fateten.firebaseapp.com",
-  projectId: "fateten",
-  storageBucket: "fateten.appspot.com",
-  messagingSenderId: "1022980228718",
-  appId: "1:1022980228718:web:25698d8d9038c734f0487f"
-};
-const app = initializeApp(config, "CLIENT");
-const auth = getAuth(app);
-getFirestore(app);
-setPersistence(auth, inMemoryPersistence);
+import { w as writable, U as UserStore, a as UserDbData, b as auth } from "../../chunks/firebase-4b4cf34d.js";
+import { GoogleAuthProvider } from "firebase/auth";
+import "firebase/firestore";
+import "firebase/app";
+import "firebase/compat";
 new GoogleAuthProvider();
 function sineIn(t) {
   const v = Math.cos(t * Math.PI * 0.5);
@@ -126,10 +115,13 @@ const css = {
 };
 const Loginscreen = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $$unsubscribe_UserStore;
+  let $$unsubscribe_UserDbData;
   $$unsubscribe_UserStore = subscribe(UserStore, (value) => value);
+  $$unsubscribe_UserDbData = subscribe(UserDbData, (value) => value);
   tweened(0, { duration: 1110, easing: sineIn });
   $$result.css.add(css);
   $$unsubscribe_UserStore();
+  $$unsubscribe_UserDbData();
   return `<main><h1 class="${"text-gray-300 font-serif text-5xl "}">FATE</h1>
 
   <p class="${"mt-10 text-gray-300 font-mono text-3xl font-extralightin"}">Let the universe find the one for you

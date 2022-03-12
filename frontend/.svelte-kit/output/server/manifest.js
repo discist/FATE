@@ -3,7 +3,7 @@ export const manifest = {
 	assets: new Set(["google.svg","logo.png"]),
 	_: {
 		mime: {".svg":"image/svg+xml",".png":"image/png"},
-		entry: {"file":"start-c972fc89.js","js":["start-c972fc89.js","chunks/vendor-e661a27b.js","chunks/singletons-a6a7384f.js"],"css":[]},
+		entry: {"file":"start-9aa44c34.js","js":["start-9aa44c34.js","chunks/vendor-afff52ae.js","chunks/singletons-a6a7384f.js"],"css":[]},
 		nodes: [
 			() => import('./nodes/0.js'),
 			() => import('./nodes/1.js'),

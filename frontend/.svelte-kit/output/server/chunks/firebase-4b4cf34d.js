@@ -1,4 +1,8 @@
 import { d as noop, f as safe_not_equal } from "./index-1ba8bc78.js";
+import { initializeApp } from "firebase/app";
+import { getAuth, setPersistence, inMemoryPersistence } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import "firebase/compat";
 const subscriber_queue = [];
 function writable(value, start = noop) {
   let stop;
@@ -42,10 +46,34 @@ function writable(value, start = noop) {
   return { set, update, subscribe };
 }
 const UserStore = writable({
+  uid: "",
   name: "",
   gender: "",
   token: "",
   pfp: "",
-  email: ""
+  email: "",
+  dob: "",
+  place: "",
+  time: ""
 });
-export { UserStore as U, writable as w };
+const UserDbData = writable({
+  name: "",
+  gender: "",
+  email: "",
+  dob: "",
+  place: "",
+  time: ""
+});
+const config = {
+  apiKey: "AIzaSyBIVTZea4hrqE5GwuFiAJIh2MTpUL0lk8U",
+  authDomain: "fateten.firebaseapp.com",
+  projectId: "fateten",
+  storageBucket: "fateten.appspot.com",
+  messagingSenderId: "1022980228718",
+  appId: "1:1022980228718:web:25698d8d9038c734f0487f"
+};
+const app = initializeApp(config, "CLIENT");
+const auth = getAuth(app);
+getFirestore(app);
+setPersistence(auth, inMemoryPersistence);
+export { UserStore as U, UserDbData as a, auth as b, writable as w };

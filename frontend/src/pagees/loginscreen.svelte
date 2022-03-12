@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { goto } from "$app/navigation";
 
-  import { UserStore } from "../stores";
+  import { UserStore , UserDbData } from "../stores";
 
   import { showGoogleSigninPop } from "../backendServices/AuthService";
   import { test } from "../backendServices/DbService";
@@ -52,9 +52,25 @@
       
 
       if (data.access) {
+        $UserStore.uid = data.data.user.uid;
         $UserStore.name = data.data.user.displayName;
         $UserStore.token = data.data.user.accessToken;
         $UserStore.pfp = data.data.user.photoURL;
+
+
+       
+        $UserDbData.name = data.data.user.displayName;
+        $UserDbData.email = data.data.user.email;
+       
+
+        
+
+
+
+
+
+
+        
        
 
         // localStorage.setItem("token", data.data.user.accessToken);
