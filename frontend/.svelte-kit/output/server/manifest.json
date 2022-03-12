@@ -15,7 +15,7 @@
       "_index-61c0bfc8.js"
     ],
     "css": [
-      "assets/entries/pages/__layout.svelte-a96554bf.css"
+      "assets/entries/pages/__layout.svelte-2f1ee278.css"
     ]
   },
   ".svelte-kit/runtime/components/error.svelte": {
@@ -33,8 +33,8 @@
     "imports": [
       "_index-61c0bfc8.js",
       "src/routes/main.svelte",
-      "_AuthService-464778a4.js",
-      "_firebase-add68633.js"
+      "_screen-5015d571.js",
+      "_firebase-48114dbe.js"
     ]
   },
   "src/routes/main.svelte": {
@@ -43,8 +43,8 @@
     "isEntry": true,
     "imports": [
       "_index-61c0bfc8.js",
-      "_AuthService-464778a4.js",
-      "_firebase-add68633.js"
+      "_screen-5015d571.js",
+      "_firebase-48114dbe.js"
     ],
     "css": [
       "assets/entries/pages/main.svelte-e0e15e3d.css"
@@ -61,31 +61,31 @@
       "assets/entries/pages/editprofile2.svelte-64407dc0.css"
     ]
   },
-  "src/routes/browserauth.svelte": {
-    "file": "entries/pages/browserauth.svelte.js",
-    "src": "src/routes/browserauth.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-61c0bfc8.js",
-      "_stores-36394365.js",
-      "_AuthService-464778a4.js",
-      "_firebase-add68633.js"
-    ],
-    "css": [
-      "assets/entries/pages/browserauth.svelte-ddd75de9.css"
-    ]
-  },
   "src/routes/editprofile.svelte": {
     "file": "entries/pages/editprofile.svelte.js",
     "src": "src/routes/editprofile.svelte",
     "isEntry": true,
     "imports": [
       "_index-61c0bfc8.js",
-      "_stores-36394365.js",
-      "_firebase-add68633.js"
+      "_stores-a9692a1f.js",
+      "_firebase-48114dbe.js"
     ],
     "css": [
       "assets/entries/pages/editprofile.svelte-5aacc7ad.css"
+    ]
+  },
+  "src/routes/codeauth.svelte": {
+    "file": "entries/pages/codeauth.svelte.js",
+    "src": "src/routes/codeauth.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-61c0bfc8.js",
+      "_stores-a9692a1f.js",
+      "_screen-5015d571.js",
+      "_firebase-48114dbe.js"
+    ],
+    "css": [
+      "assets/entries/pages/codeauth.svelte-48f8db99.css"
     ]
   },
   "src/routes/home.svelte": {
@@ -102,22 +102,23 @@
   "_index-61c0bfc8.js": {
     "file": "chunks/index-61c0bfc8.js"
   },
-  "_AuthService-464778a4.js": {
-    "file": "chunks/AuthService-464778a4.js",
+  "_screen-5015d571.js": {
+    "file": "chunks/screen-5015d571.js",
     "imports": [
-      "_firebase-add68633.js"
+      "_firebase-48114dbe.js",
+      "_index-61c0bfc8.js"
     ]
   },
-  "_firebase-add68633.js": {
-    "file": "chunks/firebase-add68633.js",
+  "_firebase-48114dbe.js": {
+    "file": "chunks/firebase-48114dbe.js",
     "imports": [
       "_index-61c0bfc8.js"
     ]
   },
-  "_stores-36394365.js": {
-    "file": "chunks/stores-36394365.js",
+  "_stores-a9692a1f.js": {
+    "file": "chunks/stores-a9692a1f.js",
     "imports": [
-      "_firebase-add68633.js"
+      "_firebase-48114dbe.js"
     ]
   }
 }

@@ -1,10 +1,8 @@
-import { a as assign, n as now, l as loop, i as identity, c as create_ssr_component, v as validate_component } from "../../chunks/index-61c0bfc8.js";
-import "../../chunks/AuthService-464778a4.js";
-import { w as writable, a as app, b as auth } from "../../chunks/firebase-add68633.js";
+import { a as assign, n as now, l as loop, i as identity, c as create_ssr_component, e as escape, v as validate_component } from "../../chunks/index-61c0bfc8.js";
+import { S as Screen } from "../../chunks/screen-5015d571.js";
+import { w as writable, a as auth } from "../../chunks/firebase-48114dbe.js";
 import "firebase/firestore";
 import "firebase/auth";
-import { getStorage } from "firebase/storage";
-import "uuid";
 import "@capacitor/browser";
 import "firebase/app";
 function sineIn(t) {
@@ -110,11 +108,7 @@ function tweened(value, defaults = {}) {
     subscribe: store.subscribe
   };
 }
-getStorage(app);
 var loginscreen_svelte_svelte_type_style_lang = "";
-const Screen = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<div style="${""}" class="${"snap-start bg-transparent flex items-center justify-center w-screen h-screen "}"><div class="${"text-2xl sm:text-3xl md:text-4xl lg:text-5xl mx-10 "}">${slots.default ? slots.default({}) : ``}</div></div>`;
-});
 var mobilelogin_svelte_svelte_type_style_lang = "";
 const css = {
   code: "@keyframes svelte-t987hq-move-twink-back{from{background-position:0 0}to{background-position:-10000px 5000px}}@-webkit-keyframes svelte-t987hq-move-twink-back{from{background-position:0 0}to{background-position:-10000px 5000px}}@keyframes svelte-t987hq-move-clouds-back{from{background-position:0 0}to{background-position:10000px 0}}@-webkit-keyframes svelte-t987hq-move-clouds-back{from{background-position:0 0}to{background-position:10000px 0}}.stars.svelte-t987hq,.twinkling.svelte-t987hq,.clouds.svelte-t987hq{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;display:block}.stars.svelte-t987hq{background:#000\n        url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top\n        center;z-index:-2}.twinkling.svelte-t987hq{background:transparent\n        url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat\n        top center;z-index:-1;-webkit-animation:svelte-t987hq-move-twink-back 200s linear infinite;animation:svelte-t987hq-move-twink-back 200s linear infinite}.clouds.svelte-t987hq{background:transparent\n        url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat\n        top center;z-index:-3;-webkit-animation:svelte-t987hq-move-clouds-back 200s linear infinite;animation:svelte-t987hq-move-clouds-back 200s linear infinite}",
@@ -131,12 +125,17 @@ const Mobilelogin = create_ssr_component(($$result, $$props, $$bindings, slots) 
     <div class="${"stars -z-10 svelte-t987hq"}"></div>
     <div class="${"twinkling -z-10  svelte-t987hq"}"></div>
     <div class="${"clouds svelte-t987hq"}"></div>
+
+
+
+    <div class="${"mt-10 font-mono input-group"}"><input placeholder="${"code"}" class="${"input input-bordered w-full max-w-xs mx-0"}" type="${"text"}" name="${""}" id="${""}">
+      <button class="${"btn btn-warning btn-outline"}">Lets goo </button></div>
   
-    <h1 class="${"font-mono text-2xl mt-16 mb-10"}">Join</h1>
+   
   
-    <button class="${"btn font-mono text-white"}"><p class="${"mx-3"}">Google </p>
+    <button class="${"btn mt-12 font-mono text-white"}"><p class="${"mx-3"}">Get code ${escape("</>")}</p>
   
-      <img src="${"/google.svg"}" alt="${""}"></button>
+      </button>
   
   </main>`;
 });

@@ -5,7 +5,7 @@ import { set_paths, assets, base } from '/Users/akashr/projects/FATE/frontend/.s
 import { set_prerendering } from '/Users/akashr/projects/FATE/frontend/.svelte-kit/runtime/env.js';
 import * as user_hooks from "./hooks.js";
 
-const template = ({ head, body, assets, nonce }) => "<!DOCTYPE html>\n<html class=\"overflow-x-hidden\" lang=\"en\">\n\t<html data-theme=\"black\"></html>\n\t<head>\n\t\t<title> FATE </title>\n\t\t<meta charset=\"utf-8\" />\n\t\t<meta name=\"description\" content=\"Fate is a astrology based matching platform with a twist\" />\n\n\t\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\t\t" + head + "\n\t</head>\n\t<body class=\"relative font-serif \">\n\t\t<div>" + body + "</div>\n\t</body>\n</html>\n";
+const template = ({ head, body, assets, nonce }) => "<!DOCTYPE html>\n\n<html class=\"overflow-x-hidden\" lang=\"en\">\n\t<html data-theme=\"black\"></html>\n\t<head>\n\t\t<title> FATE </title>\n\t\t<meta charset=\"utf-8\" />\n\t\t<meta name=\"description\" content=\"Fate is a astrology based matching platform with a twist\" />\n\n\t\t<meta name=\"viewport\" content=\"width=device-width, user-scalable=no\">\n\n\t\n\t\t" + head + "\n\t</head>\n\t<body class=\"relative font-serif \">\n\t\t<div>" + body + "</div>\n\t</body>\n</html>\n";
 
 let read = null;
 

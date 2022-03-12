@@ -3,8 +3,8 @@ const c = [
 	() => import("../runtime/components/error.svelte"),
 	() => import("../../src/routes/index.svelte"),
 	() => import("../../src/routes/editprofile2.svelte"),
-	() => import("../../src/routes/browserauth.svelte"),
 	() => import("../../src/routes/editprofile.svelte"),
+	() => import("../../src/routes/codeauth.svelte"),
 	() => import("../../src/routes/home.svelte"),
 	() => import("../../src/routes/main.svelte")
 ];
@@ -18,11 +18,11 @@ export const routes = [
 	// src/routes/editprofile2.svelte
 	[/^\/editprofile2\/?$/, [c[0], c[3]], [c[1]]],
 
-	// src/routes/browserauth.svelte
-	[/^\/browserauth\/?$/, [c[0], c[4]], [c[1]]],
-
 	// src/routes/editprofile.svelte
-	[/^\/editprofile\/?$/, [c[0], c[5]], [c[1]]],
+	[/^\/editprofile\/?$/, [c[0], c[4]], [c[1]]],
+
+	// src/routes/codeauth.svelte
+	[/^\/codeauth\/?$/, [c[0], c[5]], [c[1]]],
 
 	// src/routes/home.svelte
 	[/^\/home\/?$/, [c[0], c[6]], [c[1]]],

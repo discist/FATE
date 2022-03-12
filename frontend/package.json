@@ -27,14 +27,10 @@
     "@capacitor/cli": "^3.4.3",
     "@capacitor/core": "^3.4.3",
     "@capacitor/ios": "^3.4.3",
-    "@codetrix-studio/capacitor-google-auth": "^3.1.0",
     "daisyui": "^2.6.4",
     "dat.gui": "^0.7.9",
     "firebase": "^9.6.8",
     "gsap": "^3.9.1",
-    "svelte-cubed": "^0.2.1",
-    "svelte-knobby": "^0.3.4",
-    "three": "^0.137.5",
     "uuid": "^8.3.2"
   }
 }

@@ -3,7 +3,7 @@ export const manifest = {
 	assets: new Set(["google.svg","logo.png"]),
 	_: {
 		mime: {".svg":"image/svg+xml",".png":"image/png"},
-		entry: {"file":"start-26cc424b.js","js":["start-26cc424b.js","chunks/vendor-045929d2.js","chunks/singletons-a6a7384f.js"],"css":[]},
+		entry: {"file":"start-531d848a.js","js":["start-531d848a.js","chunks/vendor-f5de7273.js","chunks/singletons-a6a7384f.js"],"css":[]},
 		nodes: [
 			() => import('./nodes/0.js'),
 			() => import('./nodes/1.js'),
@@ -35,18 +35,18 @@ export const manifest = {
 			},
 			{
 				type: 'page',
-				pattern: /^\/browserauth\/?$/,
+				pattern: /^\/editprofile\/?$/,
 				params: null,
-				path: "/browserauth",
+				path: "/editprofile",
 				shadow: null,
 				a: [0,4],
 				b: [1]
 			},
 			{
 				type: 'page',
-				pattern: /^\/editprofile\/?$/,
+				pattern: /^\/codeauth\/?$/,
 				params: null,
-				path: "/editprofile",
+				path: "/codeauth",
 				shadow: null,
 				a: [0,5],
 				b: [1]

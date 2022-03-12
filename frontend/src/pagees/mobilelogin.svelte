@@ -24,7 +24,7 @@
     import { Browser } from '@capacitor/browser';
 
 const openCapacitorSite = async () => {
-  await Browser.open({ url: 'http://localhost:3000/browserauth' });
+  await Browser.open({ url: 'http://localhost:3000/codeauth' });
 };
   
     let textanime = tweened(0, {
@@ -45,8 +45,15 @@ const openCapacitorSite = async () => {
     <div class="stars -z-10" />
     <div class="twinkling  -z-10 " />
     <div class="clouds" />
+
+
+
+    <div class="mt-10 font-mono input-group">
+      <input placeholder="code" class="input input-bordered w-full max-w-xs mx-0" type="text" name="" id="">
+      <button class="btn btn-warning btn-outline">  Lets goo </button>
+    </div>
   
-    <h1 class="font-mono text-2xl mt-16 mb-10">Join</h1>
+   
   
     <button
       on:click={async () => {
@@ -56,11 +63,11 @@ const openCapacitorSite = async () => {
           
        
       }}
-      class="btn  font-mono  text-white"
+      class="btn  mt-12 font-mono  text-white"
     >
-      <p class="mx-3"> Google </p>
+      <p class="mx-3"> Get code {"</>"}</p>
   
-      <img src="/google.svg" alt="" />
+      <!-- <img src="/google.svg" alt="" /> -->
     </button>
   
   </main>

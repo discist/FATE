@@ -1929,7 +1929,7 @@ var user_hooks = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module"
 });
-const template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html class="overflow-x-hidden" lang="en">\n	<html data-theme="black"></html>\n	<head>\n		<title> FATE </title>\n		<meta charset="utf-8" />\n		<meta name="description" content="Fate is a astrology based matching platform with a twist" />\n\n	\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body class="relative font-serif ">\n		<div>' + body + "</div>\n	</body>\n</html>\n";
+const template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n\n<html class="overflow-x-hidden" lang="en">\n	<html data-theme="black"></html>\n	<head>\n		<title> FATE </title>\n		<meta charset="utf-8" />\n		<meta name="description" content="Fate is a astrology based matching platform with a twist" />\n\n		<meta name="viewport" content="width=device-width, user-scalable=no">\n\n	\n		' + head + '\n	</head>\n	<body class="relative font-serif ">\n		<div>' + body + "</div>\n	</body>\n</html>\n";
 let read = null;
 set_paths({ "base": "", "assets": "" });
 const get_hooks = (hooks) => ({
