@@ -3,9 +3,6 @@ import {signInWithPopup, GoogleAuthProvider} from "firebase/auth";
 import {addOrUpdateUser} from "./DbService";
 
 
-
-
-
 const provider = new GoogleAuthProvider();
 
 /**
@@ -25,7 +22,7 @@ export async function showGoogleSigninPop() {
         obj.access = true;
 
         //Try to create record in database if it doesn't exist
-        let docRecord = await addOrUpdateUser(tempData.user.uid, {})
+        let docRecord = await addOrUpdateUser(tempData.user.uid, {photoCount: 0})
         if (!docRecord.success) {
             //Return with new error from database
             obj.data = docRecord.data

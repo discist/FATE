@@ -1,7 +1,8 @@
 ﻿import {db} from "../firebase"
-import {addDoc, collection, getDoc, doc, updateDoc, setDoc} from "firebase/firestore";
+import {addDoc, collection, doc, getDoc, setDoc, updateDoc} from "firebase/firestore";
 
 const userTable = "users"
+const photoTable = "photos"
 
 export async function test() {
 
@@ -18,9 +19,6 @@ export async function test() {
 }
 
 
-
-
-
 /**
  * Creates If no record exist, updates/adds data if there is already a record
  * @param id The ID of the record
@@ -29,8 +27,8 @@ export async function test() {
  * Else we get error message as data and false as success
  */
 export async function addOrUpdateUser(id, data) {
-    console.log("add funcfrom db service " , id)
-    
+    console.log("add funcfrom db service ", id)
+
     try {
         //Created a doc reference
         let document = doc(db, userTable, id)
@@ -66,4 +64,20 @@ export async function addOrUpdateUser(id, data) {
             success: false
         }
     }
+}
+
+export async function getUserDoc(id) {
+    let document = doc(db, userTable, id)
+    return await getDoc(document)
+}
+
+
+export async function linkImageID2UserID(userID, ImageID, currentPhotoCount) {
+    await setDoc(
+        doc(db, photoTable, ImageID), {userUID: userID}
+    )
+
+    //increment the value of photoCount
+    let newPhotoCount = currentPhotoCount + 1
+    addOrUpdateUser(userID, {photoCount: newPhotoCount})
 }

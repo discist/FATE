@@ -24,8 +24,4 @@ export const UserDbData = writable({
     dob: "",
     place: "",
     time: ""
-
-
-
-
 })
