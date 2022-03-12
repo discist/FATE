@@ -1,6 +1,6 @@
-import * as module from '../entries/pages/editprofile.svelte.js';
+import * as module from '../entries/pages/browserauth.svelte.js';
 
 export { module };
-export const entry = 'pages/editprofile.svelte-3fbc9709.js';
-export const js = ["pages/editprofile.svelte-3fbc9709.js","chunks/vendor-958d3afb.js","chunks/DbService-fc3eeb94.js","chunks/singletons-a6a7384f.js"];
-export const css = ["assets/pages/editprofile.svelte-d7e827d9.css"];
+export const entry = 'pages/browserauth.svelte-39ee7fde.js';
+export const js = ["pages/browserauth.svelte-39ee7fde.js","chunks/vendor-045929d2.js","chunks/stores-874664d7.js","chunks/AuthService-5e70b388.js","chunks/DbService-a5c53d3a.js"];
+export const css = ["assets/pages/browserauth.svelte-0eeb7336.css"];

@@ -3,6 +3,7 @@ import Loginscreen from "../pagees/loginscreen.svelte";
 import Screen from "../components/screen.svelte";
 
 import {auth} from '../firebase'
+import Mobilelogin from "../pagees/mobilelogin.svelte";
 
 console.log(auth)
 
@@ -14,8 +15,8 @@ console.log(auth)
 
   <Screen>
 
-    <Loginscreen></Loginscreen>
 
+    <Mobilelogin></Mobilelogin>
 
 
   </Screen>

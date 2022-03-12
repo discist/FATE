@@ -1,0 +1,6 @@
+{
+	"appId": "com.fate.app",
+	"appName": "fate.app",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}
