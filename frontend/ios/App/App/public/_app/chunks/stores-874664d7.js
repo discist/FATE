@@ -1,0 +1,1 @@
+import{D as e}from"./vendor-045929d2.js";const t=e({uid:"",name:"",gender:"",token:"",pfp:"",email:"",dob:"",place:"",time:""}),o=e({name:"",gender:"",email:"",dob:"",place:"",time:""});export{t as U,o as a};
