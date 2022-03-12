@@ -25,7 +25,6 @@
     "daisyui": "^2.6.4",
     "dat.gui": "^0.7.9",
     "firebase": "^9.6.8",
-    "firebase-admin": "^10.0.2",
     "gsap": "^3.9.1",
     "svelte-cubed": "^0.2.1",
     "svelte-knobby": "^0.3.4",
