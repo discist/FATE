@@ -12,25 +12,19 @@ const storage = getStorage(app)
 // uploadString(Sref, "String saved in data", "txt")
 
 
-export async function uploadEncodedString(userID, blob) {
-    const attrName = "photoCount"
-    console.log("Upload Encoded String called")
-    //Get latest photoCount from userTable
-    let userDocSnap = await getUserDoc(userID)
+export async function uploadImageFileForUser(userID, blob) {
+    //Generate uid
+    const uid = uuidv4()
 
-    //store photoCount
-    let photoCount = userDocSnap.get(attrName)
-
-
-    //Create reference
-
+    //**Create reference**
     //Image is going to be stored in images/userID/imageID format
-    const imageRef = ref(storage, "images/" + userID + "/" + photoCount + ".png")
+    const imageRef = ref(storage, "images/" + userID + "/" + uid + ".png")
 
     //Uploading
     await uploadBytes(imageRef, blob)
 
     //Linking the Image with User in Table
-    await linkImageID2UserID(userID, photoCount + "", photoCount)
+    await linkImageID2UserID(userID, uid)
 
 }
+

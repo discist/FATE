@@ -72,12 +72,30 @@ export async function getUserDoc(id) {
 }
 
 
-export async function linkImageID2UserID(userID, ImageID, currentPhotoCount) {
-    await setDoc(
-        doc(db, photoTable, ImageID), {userUID: userID}
+export async function linkImageID2UserID(userID, imageID) {
+
+    //Get the user docs
+    let userDoc = await getDoc(
+        doc(
+            db, userTable, userID
+        )
     )
 
+    //Extract the photoCount from user doc
+    let count = userDoc.get("photoCount")
+
+    //**Adding a new document to the photos sub collection**
+    let userDocRef = doc(db, userTable, userID)
+    let photosCollectionRef = collection(userDocRef, photoTable)
+    let photoDocRef = doc(photosCollectionRef, count + "_")
+    await setDoc(photoDocRef, {imageID: imageID})
+
     //increment the value of photoCount
-    let newPhotoCount = currentPhotoCount + 1
-    addOrUpdateUser(userID, {photoCount: newPhotoCount})
+    await updateDoc(
+        doc(db, userTable, userID),
+        {photoCount: count + 1}
+    )
+
+    console.log("Uploaded image")
+
 }
