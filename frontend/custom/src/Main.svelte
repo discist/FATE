@@ -19,9 +19,6 @@ import Dmlayout from "./pages/Dm/Dmlayout.svelte";
 import Addpost from "./components/postypes/addpost.svelte";
 import Postpage from "./pages/postpage.svelte";
 import Openpost from "./components/postypes/openpost.svelte";
-import ViewAir from "./pages/livestreams/viewAir.svelte";
-import GoAir from "./pages/livestreams/goAir.svelte";
-import Yourair from "./pages/livestreams/yourair.svelte";
 import UserData from "./stores/UserData";
 import IsConnected from "./stores/IsConnevted";
 import ReceivedEvent from "./stores/ReceivesEvent";
@@ -123,9 +120,7 @@ const routes = {
     "/viewprofile" :  Viewprofiles,
     "/dm" :  Dmlayout,
     "/openpost" :  Openpost,
-    "/viewair" :  ViewAir,
-    "/goair" :  GoAir,
-    "/yourair" :  Yourair,
+   
     "/root"  : Root,
     "/inbox"  : Inbox
     
@@ -134,7 +129,7 @@ const routes = {
 </script>
 
 
-<main class="font-mono">
+<main class="font-mono no-scrollbar">
   <Router {routes} />
 
   <!-- <Betalaunch></Betalaunch> -->
@@ -142,3 +137,11 @@ const routes = {
   <!-- <Authpage></Authpage>
   <Profile></Profile> -->
 </main>
+
+
+
+<style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+</style>

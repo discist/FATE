@@ -1,23 +1,27 @@
 <script>
   import Tabs from "../../components/tabs.svelte";
   import Loginpage from "./Login.svelte";
+  import {fade} from "svelte/transition"
 
   import logo from "../../assets/logodiscist.svg";
 import SIgnup from "./SIgnup.svelte";
 import Login from "./Login.svelte";
+import Screen from "../../components/Screen.svelte";
 
   function flipvalues(e) {
     activeitem = e.detail;
   }
 
   let items = ["Login", "Join"];
-  let activeitem = "Login";
+  let activeitem = "Join";
 </script>
 
-<main>
-  <div class="flex justify-center flex-row mt-14 mb-5 ">
-    <h1 class="  font-mono font-medium text-center text-4xl">Discist</h1>
-    <img class="w-12" src={logo} alt="" />
+<Screen>
+
+<main in:fade  >
+  <div class="flex justify-center flex-row  mb-1">
+    <h1 class="  font-serif  text-center text-4xl"> FATE </h1>
+   
   </div>
 
   <Tabs {items} {activeitem} on:tabchange={flipvalues} />
@@ -31,6 +35,7 @@ import Login from "./Login.svelte";
     <SIgnup  on:tabchange={flipvalues} />
   {/if}
 </main>
+</Screen>
 
 <style>
   main {

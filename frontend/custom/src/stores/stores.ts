@@ -2,6 +2,20 @@ import { writable } from 'svelte/store';
 
 
 
+export const FateUser = writable({
+    uid: "nil",
+    name: "",
+    gender:"",
+    token: "",
+    pfp: "",
+    email: "",
+    dob: "",
+    place: "",
+    time: ""
+
+});
+
+
 
 
 

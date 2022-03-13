@@ -20,7 +20,7 @@ func RedisInit() *redis.Client {
 	fmt.Println("conneting to redis......")
 
 	client := redis.NewClient(&redis.Options{
-		Addr:     "127.0.0.1:6379",
+		Addr:     "45.79.126.214:6379",
 		Password: "",
 		DB:       0,
 	})

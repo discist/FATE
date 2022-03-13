@@ -152,6 +152,7 @@ func Login(ctx *fiber.Ctx) error {
 		ExistingSesionsArray = append(ExistingSesionsArray, Newsessiondata)
 		controllers.UpdateSessions("_id", stringObjectID, ExistingSesionsArray)
 		fmt.Println("added new user session:   ", res.Email)
+		fmt.Println(uuid, "copy")
 
 		return ctx.
 			Status(http.StatusAccepted).

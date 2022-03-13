@@ -10,6 +10,8 @@
   import Uri from '../../stores/URI'
 
 
+  import {fade} from "svelte/transition"
+
 
   const dispatch = createEventDispatcher();
 
@@ -161,13 +163,13 @@
   };
 </script>
 
-<main>
+<main in:fade >
   <form on:submit|preventDefault={HandleLogin} action="">
     <div
-      class="  mt-15 form-control h-auto flex flex-wrap flex-col content-center   "
+      class="  mt-12  form-control h-auto flex flex-wrap flex-col content-center   "
     >
       <div>
-        <h2 class="text-5xl">👋</h2>
+        <h2 class="text-5xl mb-3">  🌘  </h2>
       </div>
 
       <input
@@ -186,10 +188,10 @@
 
      
      
-      <Blackbutton on:click={()=>{
+      <button class="btn  btn-outline" on:click={()=>{
        
 
-      }} > ENTER </Blackbutton>
+      }} > ENTER </button>
 
       <div class=" mt-3 text-red-400 font-mono font-extralight">
         {errormessage}

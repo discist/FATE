@@ -1,6 +1,9 @@
 <script>
   import Uri from '../../stores/URI'
-  import logo from "../../assets/logodiscist.svg";
+
+  import {fade} from "svelte/transition"
+
+
 
  
 
@@ -94,14 +97,14 @@
   }
 </script>
 
-<main>
+<main in:fade >
   <form on:submit|preventDefault={handleSignUp} action="">
     <div
-      class="mt-0 form-control h-auto flex flex-wrap flex-col content-center"
+      class="mt-12 form-control h-auto flex flex-wrap flex-col content-center"
     >
       <div>
-       
-        <h2 class="text-5xl">🙏</h2>
+        
+        <h2 class="text-5xl mb-3">  🌙 </h2>
       </div>
 
       <input
@@ -118,7 +121,7 @@
         class=" mt-5 font-mono input input-bordered"
       />
 
-      <button class="btn-lg font-mono  btn mt-14"> Join </button>
+      <button class="btn-lg font-mono  btn-outline btn mt-14"> Join </button>
       <div class=" mt-3 text-red-400 font-mono font-extralight"> {errormessage} {erorrx}</div>
     </div>
   </form>

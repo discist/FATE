@@ -1,6 +1,10 @@
 {
-	"appId": "com.discist.app",
-	"appName": "discist",
+	"appId": "com.fate.app",
+	"appName": "fate",
 	"webDir": "dist",
-	"bundledWebRuntime": false
+	"bundledWebRuntime": false,
+	"server": {
+		"url": "http://112.133.192.241:3000",
+		"cleartext": true
+	}
 }

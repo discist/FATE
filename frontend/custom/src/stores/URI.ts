@@ -23,7 +23,7 @@ const Uri = writable(
     {
 
         
-        BaseURi : "https://api.discist.com",
+        BaseURi : "http://112.133.192.241:3001",
         CdnURi :   "https://cdn.discist.com",
   
          //unchanged

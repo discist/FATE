@@ -41,7 +41,7 @@ export let activeitem
         border: #d91b42 , 12px , solids;
         background-color: rgb(234, 245, 255);
         padding: 20px;
-        border-radius: 10px;
+       
 
         border-bottom: 2px solid ,#d91b42;
     }

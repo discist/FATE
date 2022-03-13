@@ -63,9 +63,11 @@ func GetMyData(ctx *fiber.Ctx) error {
 
 func UpdateData(ctx *fiber.Ctx) error {
 
-	var updatedata models.UpdateUser
+	var updatedata models.UpdateUserFate
 
 	err := ctx.BodyParser(&updatedata)
+
+	fmt.Println(updatedata)
 	if err != nil {
 		return ctx.
 			Status(http.StatusBadRequest).
@@ -73,7 +75,7 @@ func UpdateData(ctx *fiber.Ctx) error {
 
 	}
 
-	normailizedusernamex := utils.NormalizeEmail(updatedata.Username)
+	normailizedusernamex := utils.NormalizeEmail(updatedata.Name)
 
 	re, err := regexp.Compile(`[^\w]`)
 	if err != nil {
@@ -89,9 +91,9 @@ func UpdateData(ctx *fiber.Ctx) error {
 			JSON(fiber.Map{"error": "username-empty"})
 	}
 
-	if updatedata.Username != "" && lenght < 18 {
+	if updatedata.Name != "" && lenght < 18 {
 
-		id, err := controllers.RedisGetKey(updatedata.Uuid)
+		id, err := controllers.RedisGetKey(updatedata.Uid)
 
 		if err != nil {
 
@@ -123,27 +125,35 @@ func UpdateData(ctx *fiber.Ctx) error {
 
 				fmt.Println("Username not changed")
 
-				err = controllers.AddNewKey(id, "username", normailizedusername)
+				err = controllers.AddNewKey(id, "name", normailizedusername)
 				if err != nil {
 					return ctx.
 						Status(http.StatusBadRequest).
 						JSON(utils.NewJError(err))
 				}
-				err = controllers.AddNewKey(id, "story", updatedata.Story)
-				if err != nil {
-					return ctx.
-						Status(http.StatusBadRequest).
-						JSON(utils.NewJError(err))
-				}
-
-				err = controllers.AddNewKey(id, "subject", updatedata.Subject)
+				err = controllers.AddNewKey(id, "gender", updatedata.Gender)
 				if err != nil {
 					return ctx.
 						Status(http.StatusBadRequest).
 						JSON(utils.NewJError(err))
 				}
 
-				err = controllers.AddNewKey(id, "state", updatedata.State)
+				err = controllers.AddNewKey(id, "place", updatedata.Place)
+
+				if err != nil {
+					return ctx.
+						Status(http.StatusBadRequest).
+						JSON(utils.NewJError(err))
+				}
+
+				err = controllers.AddNewKey(id, "dob", updatedata.Dob)
+				if err != nil {
+					return ctx.
+						Status(http.StatusBadRequest).
+						JSON(utils.NewJError(err))
+				}
+
+				err = controllers.AddNewKey(id, "time", updatedata.Time)
 
 				if err != nil {
 					return ctx.
@@ -165,21 +175,29 @@ func UpdateData(ctx *fiber.Ctx) error {
 				Status(http.StatusBadRequest).
 				JSON(utils.NewJError(err))
 		}
-		err = controllers.AddNewKey(id, "story", updatedata.Story)
+		err = controllers.AddNewKey(id, "gender", updatedata.Gender)
 		if err != nil {
 			return ctx.
 				Status(http.StatusBadRequest).
 				JSON(utils.NewJError(err))
 		}
 
-		err = controllers.AddNewKey(id, "subject", updatedata.Subject)
+		err = controllers.AddNewKey(id, "place", updatedata.Place)
+
 		if err != nil {
 			return ctx.
 				Status(http.StatusBadRequest).
 				JSON(utils.NewJError(err))
 		}
 
-		err = controllers.AddNewKey(id, "state", updatedata.State)
+		err = controllers.AddNewKey(id, "dob", updatedata.Dob)
+		if err != nil {
+			return ctx.
+				Status(http.StatusBadRequest).
+				JSON(utils.NewJError(err))
+		}
+
+		err = controllers.AddNewKey(id, "time", updatedata.Time)
 
 		if err != nil {
 			return ctx.

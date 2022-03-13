@@ -6,4 +6,8 @@
     .logo{
         width: 700px;
     }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
 }

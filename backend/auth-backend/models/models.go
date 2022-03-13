@@ -52,6 +52,15 @@ type UpdateUser struct {
 	Posts    []string `json:"post" bson:"postid,"`
 }
 
+type UpdateUserFate struct {
+	Uid    string `json:"uid" bson:"uid,omitempty"`
+	Name   string `json:"name" bson:"name,"`
+	Gender string `json:"gender" bson:"gender,"`
+	Place  string `json:"place" bson:"place,"`
+	Dob    string `json:"dob" bson:"dob,"`
+	Time   string `json:"time" bson:"time,"`
+}
+
 type Session struct {
 	Uuid     string `json:"uuid" bson:"uuid,omitempty"`
 	Device   string `json:"device" bson:"device,omitempty"`
