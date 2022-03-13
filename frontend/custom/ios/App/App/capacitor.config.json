@@ -1,0 +1,6 @@
+{
+	"appId": "com.discist.app",
+	"appName": "discist",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}
