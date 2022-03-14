@@ -76,7 +76,7 @@ func UploadProfilePicture(ctx *fiber.Ctx) error {
 
 		//pro := "http://localhost:8083/silo/cunt/sad.jpeg"
 
-		profilephotourl := fmt.Sprintf("https://cdn.discist.com/%s/%s/%s", filedir, id, filename)
+		profilephotourl := fmt.Sprintf("https://cdn.fate.dating/%s/%s/%s", filedir, id, filename)
 		fmt.Println(profilephotourl)
 
 		err = controllers.AddNewKey(id, "profilephotourl", profilephotourl)
@@ -172,7 +172,7 @@ func UploadPostImage(ctx *fiber.Ctx) error {
 
 		//pro := "http://localhost:8083/silo/cunt/sad.jpeg"
 
-		profilephotourl := fmt.Sprintf("https://cdn.discist.com/%s/%s/%s", filedir, id, filename)
+		profilephotourl := fmt.Sprintf("https://cdn.fate.dating/%s/%s/%s", filedir, id, filename)
 		fmt.Println(profilephotourl)
 
 		ctx.
