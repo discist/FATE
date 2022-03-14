@@ -3,8 +3,8 @@ import { writable } from 'svelte/store';
 
 
 export const FateUser = writable({
-    uid: "nil",
-    name: "",
+    uid: "9ff5b0ecd758443dbe8003edf617d151",
+    name: "sex",
     gender:"",
     token: "",
     pfp: "",

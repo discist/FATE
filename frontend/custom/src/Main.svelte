@@ -25,6 +25,7 @@ import ReceivedEvent from "./stores/ReceivesEvent";
 import Root from "./pages/ROOT.svelte";
 import Inbox from "./pages/Dm/DmList.svelte";
 import Betalaunch from "./pages/betalaunch.svelte";
+import Pickphotos from "./pages/pickphotos.svelte";
 
 
 
@@ -69,7 +70,7 @@ $:if (logged == "true"){
    console.log("Logged")
   
 
-  replace("/root")
+  replace("/pickphotos")
 
  }else{
 
@@ -122,7 +123,8 @@ const routes = {
     "/openpost" :  Openpost,
    
     "/root"  : Root,
-    "/inbox"  : Inbox
+    "/inbox"  : Inbox,
+    "/pickphotos"  : Pickphotos
     
     
   };

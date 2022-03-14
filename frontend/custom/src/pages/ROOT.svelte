@@ -14,6 +14,7 @@
   import SocketStore from "../stores/SocketStore";
   import DmList from "./Dm/DmList.svelte";
   import Uri from "../stores/URI";
+import Fateroot from "./fateroot.svelte";
 
   async function getSenderProfile(username) {
  const { value } = await Storage.get({ key: "SesionID" });
@@ -71,14 +72,17 @@
       return sendtodata;
     });
 
-    if (!$SocketStore){
-    socket = CreateSocket(rawuserdata.username);
-    Listeners(socket);
-    $SocketStore = socket;
 
-    }else{
-      console.log("socket exist ");
-    }
+    // websocket shitttt !!!!!
+
+    // if (!$SocketStore){
+    // socket = CreateSocket(rawuserdata.username);
+    // Listeners(socket);
+    // $SocketStore = socket;
+
+    // }else{
+    //   console.log("socket exist ");
+    // }
 
     
 
@@ -198,5 +202,5 @@
 </script>
 
 <main>
-  <Homeroot />
+  <Fateroot></Fateroot>
 </main>

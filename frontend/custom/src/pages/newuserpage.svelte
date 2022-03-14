@@ -172,7 +172,7 @@ const hapticsImpactMedium = async () => {
 
     setTimeout(function () {
       loading = false;
-      replace("/root");
+      replace("/pickphotos");
     }, 500); //
   }
 </script>
