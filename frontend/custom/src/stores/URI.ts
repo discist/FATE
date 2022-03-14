@@ -23,8 +23,8 @@ const Uri = writable(
     {
 
         
-        BaseURi : "http://112.133.192.241:3001",
-        CdnURi :   "http://45.79.126.214:3002",
+        BaseURi : "https://api.fate.dating",
+        CdnURi :   "https://cdn.fate.dating",
   
          //unchanged
         WebSocketUri: "wss://ws.discist.com",
