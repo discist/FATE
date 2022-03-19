@@ -28,4 +28,6 @@ func Install(app *fiber.App) {
 	app.Post("/getallposts", posts.Getallposts)
 	app.Post("/getmyposts", posts.GetMyPosts)
 	app.Post("/deletepost", posts.DeletePost)
+
+	app.Post("/photourlsend", base.AddPhotoUrl)
 }

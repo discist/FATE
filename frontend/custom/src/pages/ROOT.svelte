@@ -15,11 +15,14 @@
   import DmList from "./Dm/DmList.svelte";
   import Uri from "../stores/URI";
 import Fateroot from "./fateroot.svelte";
+import { FateUser } from "../stores/stores";
 
   async function getSenderProfile(username) {
  const { value } = await Storage.get({ key: "SesionID" });
 
         let sessionID = value;
+
+        $FateUser.uid =  sessionID
 
         console.log("fetching ");
 
@@ -202,5 +205,5 @@ import Fateroot from "./fateroot.svelte";
 </script>
 
 <main>
-  <Fateroot></Fateroot>
+ <Homeroot></Homeroot>
 </main>

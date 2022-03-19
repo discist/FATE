@@ -53,12 +53,13 @@ type UpdateUser struct {
 }
 
 type UpdateUserFate struct {
-	Uid    string `json:"uid" bson:"uid,omitempty"`
-	Name   string `json:"name" bson:"name,"`
-	Gender string `json:"gender" bson:"gender,"`
-	Place  string `json:"place" bson:"place,"`
-	Dob    string `json:"dob" bson:"dob,"`
-	Time   string `json:"time" bson:"time,"`
+	Uid    string   `json:"uid" bson:"uid,omitempty"`
+	Name   string   `json:"name" bson:"name,"`
+	Gender string   `json:"gender" bson:"gender,"`
+	Place  string   `json:"place" bson:"place,"`
+	Dob    string   `json:"dob" bson:"dob,"`
+	Time   string   `json:"time" bson:"time,"`
+	Post   []string `json:"posts" bson:"posts,"`
 }
 
 type Session struct {
@@ -89,6 +90,11 @@ type Post struct {
 	Brief        string             `json:"brief" bson:"brief,omitempty"`
 	MediaURL     string             `json:"mediaurl" bson:"mediaurl,"`
 	Comments     []Comment          `json:"comments" bson:"comments,omitempty"`
+}
+
+type FateUserImage struct {
+	Uid      string `json:"uid" bson:"uid,omitempty"`
+	Photourl string `json:"photourl" bson:"photourl"`
 }
 
 type Comment struct {

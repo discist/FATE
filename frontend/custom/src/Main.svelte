@@ -70,7 +70,7 @@ $:if (logged == "true"){
    console.log("Logged")
   
 
-  replace("/pickphotos")
+  replace("/root")
 
  }else{
 

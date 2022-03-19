@@ -177,12 +177,16 @@ const hapticsImpactMedium = async () => {
   }
 </script>
 
+<h1 class="font-serif text-3xl flex justify-center mt-16">
+  FATE 
+</h1>
 
 
-  <h1 class="flex justify-center mt-16 font-serif text-3xl">
-    FATE 
-  </h1>
+<div class="flex justify-center  ">
 
+
+
+ 
 
 
 
@@ -348,7 +352,7 @@ const hapticsImpactMedium = async () => {
 </main>
 
 
-
+</div>
 
 
 

@@ -214,6 +214,23 @@ func UpdateSessions(key string, value string, empty []models.Session) error {
 	return err
 }
 
+func FateUpdatePost(key string, value string, empty []string) error {
+
+	id, err := primitive.ObjectIDFromHex(value)
+	if err != nil {
+		panic(err)
+	}
+	filter := bson.D{{key, id}}
+	fmt.Println(id)
+
+	update := bson.D{{"$set", bson.D{{"post", empty}}}}
+
+	_, err = userCollection.UpdateOne(context.Background(), filter, update)
+	utils.CheckErorr(err)
+	fmt.Println("update sucesss")
+	return err
+}
+
 func GetByKey(key string, value string) (models.User, error) {
 
 	filter := bson.D{{key, value}}
@@ -251,6 +268,17 @@ func UGetByID(value string) (models.UpdateUser, error) {
 	utils.CheckErorr(err1)
 	filter := bson.D{{"_id", _id}}
 	var res models.UpdateUser
+
+	err := userCollection.FindOne(context.Background(), filter).Decode(&res)
+
+	return res, err
+
+}
+func FateGetByID(value string) (models.UpdateUserFate, error) {
+	_id, err1 := primitive.ObjectIDFromHex(value)
+	utils.CheckErorr(err1)
+	filter := bson.D{{"_id", _id}}
+	var res models.UpdateUserFate
 
 	err := userCollection.FindOne(context.Background(), filter).Decode(&res)
 

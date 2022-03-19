@@ -94,8 +94,7 @@ function switchtab(e){
     {#if activetab === "discover"}
     
     <Discover/>
-  {:else if activetab === "search"}
-    <Searchpage/>
+  
 
     {:else if activetab === "account"}
     <Accountpage/>
@@ -104,7 +103,7 @@ function switchtab(e){
   {/if}
 
 
-  <div class=" " >
+  <div  >
   <Nav on:tabchange={switchtab} ></Nav>
 
 </div>

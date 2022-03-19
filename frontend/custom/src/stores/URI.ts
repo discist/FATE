@@ -13,17 +13,22 @@ import { writable } from 'svelte/store';
 
 
 
+//"https://api.fate.dating",
+
+
 
 
 
 const Uri = writable(
+
+  
 
 
 
     {
 
         
-        BaseURi : "https://api.fate.dating",
+        BaseURi :"http://112.133.192.241:3001",
         CdnURi :   "https://cdn.fate.dating",
   
          //unchanged

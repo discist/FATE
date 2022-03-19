@@ -294,3 +294,38 @@ func GetAllUser(ctx *fiber.Ctx) error {
 		JSON(fiber.Map{"alluserdata": alldoc})
 
 }
+
+func AddPhotoUrl(ctx *fiber.Ctx) error {
+
+	var incomminglink models.FateUserImage
+	err := ctx.BodyParser(&incomminglink)
+	utils.CheckErorr(err)
+
+	mongoid, err := controllers.RedisGetKey(incomminglink.Uid)
+	utils.CheckErorr(err)
+
+	get, err := controllers.FateGetByID(mongoid)
+	utils.CheckErorr(err)
+
+	var photoslist []string
+	photoslist = get.Post
+
+	photoslist = append(photoslist, incomminglink.Photourl)
+
+	fmt.Println(len(photoslist), "array lenght")
+
+	id, err := controllers.RedisGetKey(incomminglink.Uid)
+
+	if err != nil {
+		return ctx.
+			Status(http.StatusUnprocessableEntity).
+			JSON(utils.NewJError(err))
+
+	}
+
+	err = controllers.AddNewArray(id, "posts", photoslist)
+	utils.CheckErorr(err)
+
+	return err
+
+}

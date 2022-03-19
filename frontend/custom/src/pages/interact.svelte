@@ -2,6 +2,7 @@
 <script>
 
 import interact from "interactjs";
+import Stars from "../components/bagrounds/stars.svelte";
 
 // target elements with the "draggable" class
 interact('.draggable')
@@ -42,10 +43,10 @@ function dragMoveListener (event) {
     let currentpx = (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +  Math.pow(event.pageY - event.y0, 2) | 0))
     if (currentpx  > 200){
 
-        console.log("dc")
+        
 
     }
-    console.log(currentpx)
+   
 
     var textEl = event.target.querySelector('p')
 
@@ -76,74 +77,86 @@ function dragMoveListener (event) {
 
 </script>
 
- <main class="mt-14 mx-20 h-96">
-    <div id="drag-1"  class="draggable fixed shadow-md bordered border-4 border-black font-mono  flex flex-col justify-center">
-        <p> You can drajg one element </p>
-      </div>
-      <div id="drag-2" class=" fixed draggable shadow-md bordered border-4  font-mono  flex flex-col justify-center border-black ">
-        <p> with each pointer </p>
-      </div>
-      <div id="drag-2" class=" fixed draggable shadow-md bordered border-4  font-mono  flex flex-col justify-center border-black ">
-        <p> with each pointer </p>
-      </div>
-      <div id="drag-2" class=" fixed draggable shadow-md bordered border-4  font-mono  flex flex-col justify-center border-black ">
-        <p> with each pointer </p>
-      </div>
-      <div id="drag-2" class=" fixed draggable shadow-md bordered border-4  font-mono  flex flex-col justify-center border-black ">
-        <p> with each pointer </p>
-      </div>
-      <div id="drag-2" class=" fixed draggable shadow-md bordered border-4  font-mono  flex flex-col justify-center border-black ">
-        <p> with each pointer </p>
-      </div>
-      <div id="drag-2" class=" fixed draggable shadow-md bordered border-4  font-mono  flex flex-col justify-center border-black ">
-        <p> with each pointer </p>
-      </div>
-      <div id="drag-2" class=" fixed draggable shadow-md bordered border-4  font-mono  flex flex-col justify-center border-black ">
-        <p> with each pointer </p>
-      </div>
-      <div id="drag-2" class=" fixed draggable shadow-md bordered border-4  font-mono  flex flex-col justify-center border-black ">
-        <p> with each pointer </p>
-      </div>
-      <div id="drag-2" class=" fixed draggable shadow-md bordered border-4  font-mono  flex flex-col justify-center border-black ">
-        <p> with each pointer </p>
-      </div>
-      <div id="drag-2" class=" fixed draggable shadow-md bordered border-4  font-mono  flex flex-col justify-center border-black ">
-        <p> with each pointer </p>
-      </div>
-      <div id="drag-2" class=" fixed draggable shadow-md bordered border-4  font-mono  flex flex-col justify-center border-black ">
-        <p> with each pointer </p>
-      </div>
-      <div id="drag-2" class=" fixed draggable shadow-md bordered border-4  font-mono  flex flex-col justify-center border-black ">
-        <p> with each pointer </p>
-      </div>
-      <div id="drag-2" class=" fixed draggable shadow-md bordered border-4  font-mono  flex flex-col justify-center border-black ">
-        <p> with each pointer </p>
-      </div>
-      <div id="drag-2" class=" fixed draggable shadow-md bordered border-4  font-mono  flex flex-col justify-center border-black ">
-        <p> with each pointer </p>
-      </div>
-      <div id="drag-2" class=" fixed draggable shadow-md bordered border-4  font-mono  flex flex-col justify-center border-black ">
-        <p> with each pointer </p>
-      </div>
-      <div id="drag-2" class=" fixed draggable shadow-md bordered border-4  font-mono  flex flex-col justify-center border-black ">
-        <p> with each pointer </p>
-      </div> 
-     
+ 
+
+  <div id="drag-1"  class="draggable fixed shadow-md bordered border-1 border-black font-mono  flex flex-col justify-center">
+   <img class="object-cover h-96 w-full"  src="https://picsum.photos/2000/4000" alt="prop">
+
+
+ 
+
+
+   <h1 class="name text-xl my-2 text-center">
+    Mac aston
+  </h1>
+
+  <div class="flex flex-row  justify-center   mt-3"> 
+
     
 
- </main >
+  
+    <div class="text-xl bordered border-2 py-2 px-3 rounded-md ">
+      🔥
+    </div>
+
+
+    <div class="info flex flex-col justify-center items-center">
+
+
+
+    <h1 class="text-gray-600 text-center px-5">
+      Compatibility
+    </h1>
+
+    <h1 class="text-green-500  text-xl">
+      98%
+    </h1>
+
+    </div>
+
+
+
+
+    <div class="text-xl bordered border-2 py-2 px-3 rounded-md ">
+      ❌
+    </div>
+
+
+  
+
+
+
+  </div>
+
+
+
+
+  
+
+</div>
+
+
+
+
+  
+    
+      
+    
+
+ 
 
  
 
  <style>
-     #drag-1, #drag-2 {
-  width: 10rem;
-  min-height: 20rem;
-  margin: 1rem 0 0 1rem;
+     #drag-1 {
+  width: 22rem;
+  height: 35rem;
+  
   background-color: rgb(255, 255, 255);
   color: black;
   border-radius: 0.50em;
-  padding: 4%;
+  padding: 5%;
+  padding-bottom: 10%;
   touch-action: none;
   user-select: none;
   transform: translate(0px, 0px);

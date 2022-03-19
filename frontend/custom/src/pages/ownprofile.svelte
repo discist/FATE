@@ -6,12 +6,10 @@
   import { Logooutall } from "../functions/logout";
   import { Storage } from "@capacitor/storage";
 import Uri from "../stores/URI";
+import Stars from "../components/bagrounds/stars.svelte";
   let sessionID;
   let DataResponse;
-  let sessionarray;
-  let loginactivityerr;
-  let ses;
-  let usr;
+  
   let rawuserdata;
 
   let cats = [];
@@ -171,7 +169,7 @@ import Uri from "../stores/URI";
         <button
           class="btn btn-sm btn-outline w-20  mt-3 mx-4"
           on:click={() => {
-            push("/editprofile");
+            push("/newuser");
           }}
         >
           edit
@@ -211,6 +209,8 @@ import Uri from "../stores/URI";
 
    
   </div>
+
+  <Stars></Stars>
 </main>
 
 <style>
