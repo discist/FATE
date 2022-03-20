@@ -8,13 +8,13 @@ import Logout from "../functions/logout";
 
 
 
-let version = "v.00.06";
+let version = "v.00.02";
 let dev = "Dev build HMR  👨🏻‍💻" 
 let  alpha = "Alpha tester-build"
 
 let production = "production build"
 
-let recentupdates = "Alpha Launch Build"
+let recentupdates = "added loading screen"
 
 
 let build = production
@@ -66,7 +66,7 @@ const updateNow = async () => {
                 Current build :  {build}   
             </h2>
 
-            <p class="text-purple-600"> made with 💚 by discist team 🤟🏻</p>
+            <p class="text-purple-600"> made with  by FATE team 🤟🏻</p>
 
 
             <p class="text-blue-300"> -sky 🌩 </p>

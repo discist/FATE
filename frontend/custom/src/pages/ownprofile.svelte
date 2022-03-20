@@ -12,9 +12,10 @@ import Stars from "../components/bagrounds/stars.svelte";
   
   let rawuserdata;
 
-  let cats = [];
 
-  let errormessage;
+  let name = ""
+  let pfp =  ""
+
 
   onMount(async () => {
     //sessionID = localStorage.getItem("SesionID");
@@ -49,6 +50,7 @@ import Stars from "../components/bagrounds/stars.svelte";
     result = JSON.stringify(json);
 
     DataResponse = await JSON.parse(result);
+    
 
     if (DataResponse.error) {
       //localStorage.setItem("isLogged", "false");
@@ -57,47 +59,26 @@ import Stars from "../components/bagrounds/stars.svelte";
       replace("/auth");
     } else {
       rawuserdata = await DataResponse.userdata;
-      //console.log(DataResponse);
-      UserData.update((val) => {
-        let sendtodata = {
-          UserID: rawuserdata.id,
-          Email: rawuserdata.email,
-          Password: "",
-          CreatedAt: rawuserdata.createdAt,
-          UpdatedAt: rawuserdata.updatedAt,
-          Sessions: rawuserdata.sessions,
-          Username: rawuserdata.username,
-          Story: rawuserdata.story,
-          State: rawuserdata.state,
-          Subject: rawuserdata.subject,
-          Profilephotourl: rawuserdata.profilephotourl,
-        };
+      console.log(rawuserdata);
 
-        return sendtodata;
-      });
+      $UserData.Email =rawuserdata.email
+      $UserData.name =rawuserdata.name
+      $UserData.Profilephotourl = rawuserdata.photos
+      $UserData.UserID = rawuserdata.id
+
+      
+
+      name = rawuserdata.name
+
+      pfp = $UserData.Profilephotourl[0]
+     
     }
     let location = "";
     let device = "";
 
     // @ts-ignore
-    $UserData.Sessions.forEach((item, index) => {
-      let uuid = item.uuid;
-      try {
-        location = JSON.parse(item.location);
-        device = JSON.parse(item.device);
-      } catch {
-        console.log(console.error());
-      }
-
-      let sessionobj = {
-        index: index,
-        uuid: uuid,
-        location: location,
-        device: device,
-      };
-      cats.push(sessionobj);
-    });
-    cats = await cats;
+   
+    
   }
 </script>
 
@@ -135,34 +116,18 @@ import Stars from "../components/bagrounds/stars.svelte";
     <div class="namecard flex flex-row mx-2">
       <div class="avatar ">
         <div class="mb-0 w-24  default group-hover:mx-auto h-24 mask mask-circle">
-          <img alt="." src={$UserData.Profilephotourl} />
+          <img alt="." src={pfp} />
         </div>
 
-        {#if $UserData.State == "teacher"}
 
-        <div class="  ">
-
-          <div class="  absolute  right-3  bg-green-50 rounded-b-full">
-          <p
-            class="   text-2xl"
-          >
-            👩🏻‍🏫
-          </p>
-
-        </div>
-        </div>
       
-        {/if}
+        
       </div>
 
       <div class="flex flex-col mx-0">
-        <h1 class="font-mono text-xl font-bold mx-5">{$UserData.Username}</h1>
+        <h1 class="font-mono text-xl font-bold mx-5">{name}</h1>
 
-        {#if $UserData.State == "teacher"}
-
-        <h1 class="font-mono mt-0 font-semibold mx-5">{$UserData.Subject}</h1>
-          
-        {/if}
+        
 
        
 
@@ -177,11 +142,7 @@ import Stars from "../components/bagrounds/stars.svelte";
       </div>
     </div>
 
-    <div class="bordered w-96">
-      <p class=" flex justify-start mx-4 mt-3  font-mono font-thin">
-        {$UserData.Story}
-      </p>
-    </div>
+   
 
     <!-- <div class="font-mono w-auto text-center  ">EMAIL :{$UserData.Email}</div> -->
 

@@ -20,6 +20,16 @@ type UserAllData struct {
 	ProfilePhotoUrl string             `json:"profilephotourl" bson:"profilephotourl,"`
 }
 
+type UserAllDataFate struct {
+	ID        primitive.ObjectID `json:"id" bson:"_id,omitempty"`
+	Email     string             `json:"email" bson:"email,omitempty"`
+	CreatedAt time.Time          `json:"createdAt" bson:"createdAt,omitempty"`
+	UpdatedAt time.Time          `json:"updatedAt" bson:"updatedAt,omitempty"`
+	Sessions  []Session          `json:"sessions" bson:"sessions,"`
+	Name      string             `json:"name" bson:"name,"`
+	Photos    []string           `json:"photos" bson:"posts,"`
+}
+
 type UserAllDataPublic struct {
 	ID primitive.ObjectID `json:"id" bson:"_id,omitempty"`
 	//Email           string             `json:"email" bson:"email,omitempty"`

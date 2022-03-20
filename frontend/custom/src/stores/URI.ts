@@ -5,7 +5,6 @@ import { writable } from 'svelte/store';
 // BaseURi : "http://112.133.192.241:3001",
 // CdnURi :   "http://112.133.192.241:3002",
 
-
 // BaseURi : "https://api.discist.com",
 // CdnURi :   "https://cdn.discist.com",
 // WebSocketUri :   "wss://ws.discist.com",
@@ -22,7 +21,7 @@ import { writable } from 'svelte/store';
 const Uri = writable(
 
   
-
+   // https://api.fate.dating
 
 
     {

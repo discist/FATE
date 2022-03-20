@@ -18,12 +18,8 @@ const UserData = writable(
         CreatedAt: "",
         UpdatedAt: "",
         Sessions:  "",
-        Username: "",
-          Story:    "",
-          State:    "",
-          Subject  :"",
-        
-        Profilephotourl :""
+        name: "",
+        Profilephotourl :[]
 
 
     },

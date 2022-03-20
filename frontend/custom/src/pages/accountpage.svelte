@@ -16,9 +16,7 @@
   <div
     class="flex mt-11 py-2 flex-row justify-evenly text-center bordered border-1 rounded-lg border-gray-300 w-full "
   >
-    <div class=" py-1 px-3  rounded-md  bordered border-2">
-      <h1>posts</h1>
-    </div>
+   
 
     <!-- <div class=" py-2 px-3  rounded-md  shadow-md">
             <h1 > classes </h1>

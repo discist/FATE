@@ -1,9 +1,6 @@
 <script>
-  import Tabs from "../../components/tabs.svelte";
-  import Loginpage from "./Login.svelte";
-  import {fade} from "svelte/transition"
-
-  import logo from "../../assets/logodiscist.svg";
+import Tabs from "../../components/tabs.svelte";
+import {fade} from "svelte/transition"
 import SIgnup from "./SIgnup.svelte";
 import Login from "./Login.svelte";
 import Screen from "../../components/Screen.svelte";

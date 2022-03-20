@@ -44,9 +44,7 @@ const hapticsImpactMedium = async () => {
   //   console.log("checking user name babey ", nameavail);
   // }
   let nameavail = true;
-  let story = $UserData.Story;
-  let subject = $UserData.Subject;
-
+  
   let uuid = "";
 
   

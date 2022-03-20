@@ -103,7 +103,7 @@ function switchtab(e){
   {/if}
 
 
-  <div  >
+  <div class=""  >
   <Nav on:tabchange={switchtab} ></Nav>
 
 </div>

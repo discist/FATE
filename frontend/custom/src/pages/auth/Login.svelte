@@ -1,16 +1,13 @@
 <script>
-  import logo from "../../assets/logodiscist.svg";
   import { Device } from "@capacitor/device";
   import { onMount } from "svelte";
   import UserStore from "../../stores/stores";
   import { createEventDispatcher } from "svelte";
   import { replace } from "svelte-spa-router";
   import { Storage } from '@capacitor/storage';
-  import Blackbutton from "../../components/buttons/blackbutton.svelte";
   import Uri from '../../stores/URI'
-
-
-  import {fade} from "svelte/transition"
+  import {fade , slide} from "svelte/transition"
+import Basicloader from "../../components/loading/basicloader.svelte";
 
 
   const dispatch = createEventDispatcher();
@@ -38,7 +35,12 @@
     console.log($UserStore);
   });
 
+  let loading = false
+
   function HandleLogin() {
+
+   
+   
     valid = true;
     if (LoginJson.email.trim().length < 1) {
       console.log("email empty");
@@ -61,7 +63,8 @@
   
 
   async function postlogin() {
-    console.log("post started");
+    
+    loading = true
     const res = await fetch(`${$Uri.BaseURi}/login`, {
       method: "POST",
 
@@ -88,8 +91,10 @@
       console.log("error:", LoginResponse.error);
       errormessage = LoginResponse.error;
       success = "";
+      loading =false
     } else {
       addtostore();
+      loading = false
 
       success = "Authenticated";
       sessionID = LoginResponse.uuid;
@@ -163,6 +168,8 @@
   };
 </script>
 
+
+
 <main in:fade >
   <form on:submit|preventDefault={HandleLogin} action="">
     <div
@@ -192,6 +199,7 @@
        
 
       }} > ENTER </button>
+     
 
       <div class=" mt-3 text-red-400 font-mono font-extralight">
         {errormessage}
@@ -205,5 +213,13 @@
     </div>
   </form>
 
+ {#if loading}
+
+ <div in:fade class="flex flex-col justify-center w-full items-center mt-10">
+  <Basicloader></Basicloader>
+ </div>
+   
+ {/if}
+ 
   
 </main>

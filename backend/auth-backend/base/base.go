@@ -43,8 +43,9 @@ func GetMyData(ctx *fiber.Ctx) error {
 
 	if userID != "" {
 
-		var userInfo models.UserAllData
-		userInfo, err := controllers.GetFullDoc(userID)
+		var userInfo models.UserAllDataFate
+		userInfo, err := controllers.GetFullDocFate(userID)
+		//fmt.Println(userInfo)
 		if err != nil {
 			return ctx.
 				Status(http.StatusBadGateway).
