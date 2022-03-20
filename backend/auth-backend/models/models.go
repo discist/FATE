@@ -28,6 +28,11 @@ type UserAllDataFate struct {
 	Sessions  []Session          `json:"sessions" bson:"sessions,"`
 	Name      string             `json:"name" bson:"name,"`
 	Photos    []string           `json:"photos" bson:"posts,"`
+	Dob       string             `json:"dob" bson:"dob,"`
+	Date      string             `json:"date" bson:"date,"`
+	Time      string             `json:"time" bson:"time,"`
+	Gender    string             `json:"gender" bson:"gender,"`
+	Place     string             `json:"place" bson:"place,"`
 }
 
 type UserAllDataPublic struct {

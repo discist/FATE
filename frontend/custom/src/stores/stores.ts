@@ -4,7 +4,7 @@ import { writable } from 'svelte/store';
 
 export const FateUser = writable({
     uid: "",
-    name: "x",
+    name: "",
     gender:"",
     token: "",
     pfp: "",

@@ -170,7 +170,7 @@ func UpdateData(ctx *fiber.Ctx) error {
 
 		}
 
-		err = controllers.AddNewKey(id, "username", normailizedusername)
+		err = controllers.AddNewKey(id, "name", normailizedusername)
 		if err != nil {
 			return ctx.
 				Status(http.StatusBadRequest).

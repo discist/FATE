@@ -26,6 +26,7 @@ import Root from "./pages/ROOT.svelte";
 import Inbox from "./pages/Dm/DmList.svelte";
 import Betalaunch from "./pages/betalaunch.svelte";
 import Pickphotos from "./pages/pickphotos.svelte";
+import Fateeditprofile from "./pages/profiles/fateeditprofile.svelte";
 
 
 
@@ -124,7 +125,8 @@ const routes = {
    
     "/root"  : Root,
     "/inbox"  : Inbox,
-    "/pickphotos"  : Pickphotos
+    "/pickphotos"  : Pickphotos,
+    "/editfate"  : Fateeditprofile
     
     
   };

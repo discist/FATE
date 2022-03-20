@@ -80,7 +80,7 @@ function dragMoveListener (event) {
  
 
   <div id="drag-1"  class="draggable fixed shadow-md bordered border-1 border-black font-mono  flex flex-col justify-center">
-   <img class="object-cover h-96 w-full"  src="https://picsum.photos/2000/4000" alt="prop">
+   <img class="object-cover h-96 w-full"  src="https://picsum.photos/600/1200" alt="prop">
 
 
  

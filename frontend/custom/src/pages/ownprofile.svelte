@@ -1,5 +1,5 @@
 <script>
-  import UserStore from "../stores/stores";
+  import UserStore, { FateUser } from "../stores/stores";
   import { onMount } from "svelte";
   import UserData from "../stores/UserData";
   import { replace, push } from "svelte-spa-router";
@@ -65,6 +65,20 @@ import Stars from "../components/bagrounds/stars.svelte";
       $UserData.name =rawuserdata.name
       $UserData.Profilephotourl = rawuserdata.photos
       $UserData.UserID = rawuserdata.id
+
+
+
+      $FateUser.email  = rawuserdata.email
+      $FateUser.name  = rawuserdata.name
+
+      $FateUser.gender  = rawuserdata.gender
+
+      $FateUser.dob  = rawuserdata.dob
+      $FateUser.time  = rawuserdata.time
+      $FateUser.place  = rawuserdata.place
+
+
+
 
       
 
@@ -134,7 +148,7 @@ import Stars from "../components/bagrounds/stars.svelte";
         <button
           class="btn btn-sm btn-outline w-20  mt-3 mx-4"
           on:click={() => {
-            push("/newuser");
+            push("/editfate");
           }}
         >
           edit
