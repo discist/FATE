@@ -27,7 +27,7 @@ const Uri = writable(
     {
 
         
-        BaseURi :"http://112.133.192.241:3001",
+        BaseURi :"https://api.fate.dating",
         CdnURi :   "https://cdn.fate.dating",
   
          //unchanged
