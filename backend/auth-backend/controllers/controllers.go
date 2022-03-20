@@ -331,6 +331,7 @@ func GetFullDocFate(value string) (models.UserAllDataFate, error) {
 	_id, err1 := primitive.ObjectIDFromHex(value)
 	utils.CheckErorr(err1)
 	filter := bson.D{{"_id", _id}}
+	fmt.Println("fixed")
 	var res models.UserAllDataFate
 
 	err := userCollection.FindOne(context.Background(), filter).Decode(&res)
