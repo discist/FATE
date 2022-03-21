@@ -17,6 +17,7 @@ import (
 )
 
 //db inits
+//new push
 
 var rdb = db.RedisInit()
 var mongoclient = db.MongoInit()
