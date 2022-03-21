@@ -169,7 +169,7 @@
   
       setTimeout(function () {
         loading = false;
-        replace("/profile");
+        pop();
       }, 500); //
     }
   </script>

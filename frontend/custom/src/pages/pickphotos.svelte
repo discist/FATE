@@ -242,7 +242,7 @@ let imageselected
 
         $FateUser.uid = value
 
-        $FateUser.name = "cuntslimslam"
+        
 
         console.log("uuid bro " , $FateUser);
 

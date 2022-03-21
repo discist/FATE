@@ -62,10 +62,12 @@ let rawuserdata;
       rawuserdata = await DataResponse.userdata;
 
       
+
+      
       
      
 
-      console.log("end")
+      console.log(rawuserdata , "enndder")
 
       UserStore.update((values)=>{
      
@@ -84,7 +86,30 @@ let rawuserdata;
         
       
       })
+
+      UserData.update((values)=>{
      
+        let sendtostore = {
+          UserID : rawuserdata.id,
+          Email: rawuserdata.Email,    
+          Password: rawuserdata.Password,
+          CreatedAt: rawuserdata.CreatedAt,
+          UpdatedAt: rawuserdata.UpdatedAt,
+          Sessions:  rawuserdata.session,
+          name: rawuserdata.name,
+          Profilephotourl :rawuserdata.photos
+  
+  
+        }
+  
+        
+  
+        return sendtostore
+        
+      
+      })
+
+      
 
      
     }

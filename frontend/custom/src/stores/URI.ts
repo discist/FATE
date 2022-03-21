@@ -3,7 +3,7 @@ import { writable } from 'svelte/store';
 
 
 // BaseURi : "http://112.133.192.241:3001",
-// CdnURi :   "http://112.133.192.241:3002",
+// CdURi :   "http://112.133.192.241:3002",
 
 // BaseURi : "https://api.discist.com",
 // CdnURi :   "https://cdn.discist.com",
@@ -27,7 +27,7 @@ const Uri = writable(
     {
 
         
-        BaseURi :"http://112.133.192.241:3001",
+        BaseURi :"https://api.fate.dating",
         CdnURi :   "https://cdn.fate.dating",
   
          //unchanged
